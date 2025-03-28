@@ -22,16 +22,13 @@ jobs:
 
     strategy:
       matrix:
-        otp: ["erlang:22"]
         elixir: ["1.11.2"]   
+
+    container:
+      image: ${{ matrix.elixir }}  
 
     steps:
     - uses: actions/checkout@v4
-    - name: Set up Elixir
-      uses: erlef/setup-beam@v1
-      with:
-        otp-version: ${{matrix.otp}}
-        elixir-version: ${{matrix.elixir}}
     - name: Restore dependencies cache
       uses: actions/cache@v3
       with:
