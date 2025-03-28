@@ -47,4 +47,5 @@ jobs:
       uses: codecov/codecov-action@v1.0.6
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
+        slug: zgbjgg/dragonite
         file: cover/excoveralls.xml
