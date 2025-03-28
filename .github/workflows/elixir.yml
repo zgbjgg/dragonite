@@ -22,7 +22,7 @@ jobs:
 
     strategy:
       matrix:
-        elixir: ["1.11.2"]   
+        elixir: ["elixir:1.11"]   
 
     container:
       image: ${{ matrix.elixir }}  
