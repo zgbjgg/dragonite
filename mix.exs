@@ -49,8 +49,9 @@ defmodule Dragonite.MixProject do
 
   defp deps do
     [
+      {:nimble_parsec, "1.3.1", only: :docs, runtime: false, override: true},
       {:yaml_elixir, "~> 2.7"},
-      {:ex_doc, "~> 0.24", only: :dev, runtime: false},
+      {:ex_doc, "0.24.0", only: :docs, runtime: false},
       {:dialyxir, "~> 1.0", only: [:dev, :test], runtime: false, optional: true},
       {:excoveralls, "~> 0.10", only: :test}
     ]
