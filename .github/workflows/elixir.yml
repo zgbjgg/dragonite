@@ -42,10 +42,10 @@ jobs:
     - name: Compile
       run: mix compile
     - name: Run tests
-      run: MIX_ENV=test mix coveralls.xml
+      run: MIX_ENV=test mix coveralls.json
     - name: Codecov
       uses: codecov/codecov-action@v1.0.6
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         slug: zgbjgg/dragonite
-        file: cover/excoveralls.xml
+        file: cover/excoveralls.json
