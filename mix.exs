@@ -33,7 +33,7 @@ defmodule Dragonite.MixProject do
     [
       name: "dragonite",
       maintainers: ["Jorge Garrido"],
-      files: ~w(lib .formatter.exs mix.exs README.md LICENSE.md),
+      files: ~w(lib .formatter.exs mix.exs README.md LICENSE),
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/zgbjgg/dragonite"}
     ]
