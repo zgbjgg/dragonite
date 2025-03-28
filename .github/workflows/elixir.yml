@@ -22,7 +22,7 @@ jobs:
 
     strategy:
       matrix:
-        otp: ["erlang:22"]
+        otp: ["22.3"]
         elixir: ["1.11.2"]   
 
     steps:
