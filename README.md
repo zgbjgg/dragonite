@@ -1,7 +1,7 @@
 # dragonite
 **Dragonite** - Fast, reliable and configurable EDI parser (encode &amp; decode), seeker &amp; rule runner.
 
-[![Hex.pm](https://img.shields.io/hexpm/v/jun.svg)](https://hex.pm/packages/dragonite) 
+[![Hex.pm](https://img.shields.io/hexpm/v/dragonite.svg)](https://hex.pm/packages/dragonite) 
 [![Build Status](https://github.com/zgbjgg/dragonite/actions/workflows/elixir.yml/badge.svg)](https://github.com/zgbjgg/dragonite/actions/workflows/elixir.yml)
 [![Codecov](https://img.shields.io/codecov/c/github/zgbjgg/dragonite.svg)](https://codecov.io/gh/zgbjgg/dragonite)
 [![License: MIT](https://img.shields.io/github/license/zgbjgg/dragonite.svg)](https://raw.githubusercontent.com/zgbjgg/dragonite/master/LICENSE)
