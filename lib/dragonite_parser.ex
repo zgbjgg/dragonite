@@ -265,7 +265,7 @@ defmodule Dragonite.Parser do
 
   @doc """
   Check if a `%DragoniteEDI.Message{}` is valid against rules defined in environment, so
-  don`t need to pass rules, since they are loaded from pre-loaded config.
+  don't need to pass rules, since they are loaded from pre-loaded config.
 
   If rules are empty the message is marked as valid, since there are no rules to check.
 
