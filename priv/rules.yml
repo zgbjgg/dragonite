@@ -1,0 +1,84 @@
+###
+###    EDI rules - configuration file used by Dragonite
+###
+### The configuration file is written in YAML.
+### *******************************************************
+### *******           !!! WARNING !!!               *******
+### *******     YAML IS INDENTATION SENSITIVE       *******
+### ******* MAKE SURE YOU INDENT SECTIONS CORRECTLY *******
+### *******************************************************
+### Refer to http://en.wikipedia.org/wiki/YAML for the brief description.
+###
+
+###
+### EDI rules define how each element of each field is validated and must pass the validation
+### in order to mark message as valid. Those validations are defined here through a simple syntax
+### using YML clauses, the next are a valid set of values:
+###
+### * Always enclose a full element with their validators, elements can be: isa, iea, gs, ge, st, se.
+###
+### * Each element contains position as key and a rule of validation, position is expressed as
+###   integer (but with zero to the left if required).
+###
+### * Pattern (value) must match a string, set of strings, length of other element or value or other element.
+###
+### * Wildcard must match a value from external struct source (such a databse schema), please use as: $custom.my_field
+###   to allow interpolation. Please refer to `Dragonite.to_rules/3` to check how works with wildcards.
+###
+### The next is an example:
+###
+### - isa:
+###     05: "08" ### ISA at position 05 MUST match 08 string.
+###     06:
+###         - {el: "gs", value: "02"} ### ISA at position 05 MUST have same value in GS at position 02
+###     15:
+###         - "P" ### ISA at position 15 MUST match P or T string, other value is not valid.
+###         - "T"
+###     16:
+###        - {el: "st", value: "$length"} ### ISA at position 16 should contains the length of ST elements, if ST elements are 6 this position MUST have 6.
+###
+- 204:
+    - isa:
+        05: "$custom.qualifier"
+        06:
+            - {el: "gs", value: 02}
+        08:
+            - {el: "gs", value: 03}
+        13:
+            - {el: "iea", value: 02}
+        15: "T"
+    - gs:
+        01: "SM"
+        06:
+            - {el: "ge", value: 02}
+    - ge:
+        01:
+            - {el: "st", value: "$length"}
+        02:
+            - {el: "gs", value: 06}
+    - iea:
+        01:
+            - {el: "gs", value: "$length"}
+        02:
+            - {el: "isa", value: 13}
+    - se:
+        01:
+            - {el: "st", value: "$values"}
+    - st:
+        02:
+            - {el: "se", value: 02}
+    - st:
+        01: "204"
+
+    - st:
+        na:
+            - {el: "S5", cond: "==", value: 2, agg: "$count"}
+
+- 997:
+    - st:
+        01: "997"
+    - gs:
+        01: "FA"
+    - st:
+        02:
+            - {el: "se", value: 02}
