@@ -7,6 +7,7 @@
 [![License: MIT](https://img.shields.io/github/license/zgbjgg/dragonite.svg)](https://raw.githubusercontent.com/zgbjgg/dragonite/master/LICENSE)
 [![Hex.pm](https://img.shields.io/hexpm/dt/dragonite.svg)](https://hex.pm/packages/dragonite)
 [![Hex.pm](https://img.shields.io/hexpm/dw/dragonite.svg)](https://hex.pm/packages/dragonite)
+[![Documentation](https://img.shields.io/badge/documentation-gray)](https://hexdocs.pm/dragonite)
 
 ### Decoding
 
