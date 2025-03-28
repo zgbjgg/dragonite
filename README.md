@@ -123,7 +123,7 @@ YML structure works:
 
 ```yml
 - isa:
-   04: "$edi_customer.edi_provider_id" ### ISA at position 04 MUST match with edi_provider_id value at database
+   04: "$custom.qualifier" ### ISA at position 04 MUST match with qualifier value in wildcard struct
    05: "08" ### ISA at position 05 MUST match 08 string.
    06:
        - {el: "gs", value: "02"} ### ISA at position 05 MUST have same value in GS at position 02
