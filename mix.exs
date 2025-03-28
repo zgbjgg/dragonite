@@ -50,7 +50,7 @@ defmodule Dragonite.MixProject do
   defp deps do
     [
       {:yaml_elixir, "~> 2.7"},
-      {:ex_doc, "~> 0.24", only: :docs, runtime: false},
+      {:ex_doc, "~> 0.24", only: :dev, runtime: false},
       {:dialyxir, "~> 1.0", only: [:dev, :test], runtime: false, optional: true},
       {:excoveralls, "~> 0.10", only: :test}
     ]
